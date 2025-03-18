@@ -1,9 +1,7 @@
 ﻿using CDRPlatform.AppServices.Interfaces;
-using CDRPlatform.Data.Repositories;
 using CDRPlatform.Domain.Models;
 using CDRPlatform.Domain.Interfaces.Repositories;
 using CsvHelper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CDRPlatformApi.Controllers

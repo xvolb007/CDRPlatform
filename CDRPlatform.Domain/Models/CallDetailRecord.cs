@@ -1,7 +1,4 @@
-﻿using CsvHelper;
-using CsvHelper.Configuration;
-using CsvHelper.Configuration.Attributes;
-using CsvHelper.TypeConversion;
+﻿using CsvHelper.Configuration.Attributes;
 
 namespace CDRPlatform.Domain.Models
 {
