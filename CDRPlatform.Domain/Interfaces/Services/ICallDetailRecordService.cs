@@ -4,6 +4,6 @@ namespace CDRPlatform.Domain.Interfaces.Services
 {
     public interface ICallDetailRecordService
     {
-        Task AddCallDetailRecordsAsync(IEnumerable<CallDetailRecord> records);
+        Task AddCallDetailRecordsAsync(Stream records);
     }
 }
