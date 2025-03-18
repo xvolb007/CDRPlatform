@@ -1,6 +1,12 @@
 
 using CDRPlatform.AppServices.Interfaces;
 using CDRPlatform.AppServices.Services;
+using CDRPlatform.Data.Contexts;
+using CDRPlatform.Data.Repositories;
+using CDRPlatform.Domain.Interfaces.Repositories;
+using CDRPlatform.Domain.Interfaces.Services;
+using CDRPlatform.Domain.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace CDRPlatformApi
 {
@@ -10,8 +16,13 @@ namespace CDRPlatformApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            //services
             builder.Services.AddScoped<ICsvImportService, CsvImportService>();
+            builder.Services.AddScoped<ICallDetailRecordService, CallDetailRecordService>();
+            //reps
+            builder.Services.AddScoped<ICallDetailRecordRepository, CallDetailRecordRepository>();
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

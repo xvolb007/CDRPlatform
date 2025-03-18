@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDRPlatform.Domain", "CDRPl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDRPlatform.AppServices", "CDRPlatform.AppServices\CDRPlatform.AppServices.csproj", "{5304D915-8AF5-4C90-8ADD-4703A3B7FBD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDRPlatform.Data", "CDRPlatform.Data\CDRPlatform.Data.csproj", "{2F39A86E-0D56-44D3-B264-66C5D2CE78F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5304D915-8AF5-4C90-8ADD-4703A3B7FBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5304D915-8AF5-4C90-8ADD-4703A3B7FBD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5304D915-8AF5-4C90-8ADD-4703A3B7FBD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F39A86E-0D56-44D3-B264-66C5D2CE78F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F39A86E-0D56-44D3-B264-66C5D2CE78F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F39A86E-0D56-44D3-B264-66C5D2CE78F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F39A86E-0D56-44D3-B264-66C5D2CE78F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

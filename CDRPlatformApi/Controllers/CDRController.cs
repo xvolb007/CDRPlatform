@@ -1,5 +1,7 @@
 ﻿using CDRPlatform.AppServices.Interfaces;
+using CDRPlatform.Data.Repositories;
 using CDRPlatform.Domain.Models;
+using CDRPlatform.Domain.Interfaces.Repositories;
 using CsvHelper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +14,13 @@ namespace CDRPlatformApi.Controllers
     {
         private readonly ICsvImportService _csvImportService;
         private readonly ILogger<CDRController> _logger;
-        public CDRController(ICsvImportService csvImportService, ILogger<CDRController> logger)
+        private readonly ICallDetailRecordRepository _callDetailRecordRepository;
+        public CDRController(ICsvImportService csvImportService, ILogger<CDRController> logger, ICallDetailRecordRepository callDetailRecordRepository)
         {
             _csvImportService = csvImportService;
             _logger = logger;
+            _callDetailRecordRepository = callDetailRecordRepository;
+
         }
         [HttpPost("import-cdrs-from-csv")]
         public async Task<IActionResult> ImportCallDetailRecordsFromCsv(IFormFile file)
@@ -28,6 +33,7 @@ namespace CDRPlatformApi.Controllers
                 using (var stream = file.OpenReadStream())
                 {
                     var records = await _csvImportService.ReadCSV<CallDetailRecord>(stream);
+                    await _callDetailRecordRepository.AddCallDetailRecordsAsync(records);
                     return Ok(new { success = true, count = records.Count });
                 }
             }
