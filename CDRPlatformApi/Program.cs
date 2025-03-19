@@ -15,6 +15,7 @@ namespace CDRPlatformApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddAutoMapper(typeof(CDRPlatform.Domain.Mapping.CallDetailRecordProfile).Assembly);
 
             //services
             builder.Services.AddScoped<ICsvImportService, CsvImportService>();
