@@ -16,7 +16,7 @@ namespace CDRPlatform.Data.Contexts
 
             modelBuilder.Entity<CallDetailRecord>()
                 .Property(c => c.Cost)
-                .HasPrecision(20,10);
+                .HasPrecision(20,3);
         }
     }
 }
